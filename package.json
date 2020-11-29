@@ -18,6 +18,7 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --quiet --fix",
+      "cross-env CI=true yarn test --bail --findRelatedTests",
       "git add"
     ],
     "*.{json,md,html}": [
@@ -31,6 +32,7 @@
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
+    "cross-env": "^7.0.2",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
