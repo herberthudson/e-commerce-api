@@ -1,15 +1,14 @@
 import express from 'express'
 import 'dotenv/config'
-import { Request, Response } from 'express'
-
-import { StatusCodes } from 'http-status-codes'
+import cors from 'cors'
+import router from './routes'
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
-app.get('/', (req: Request, res: Response) => {
-  res.status(StatusCodes.OK).send({ message: 'Hello World' })
-})
+app.use(router)
 
 export { app }
