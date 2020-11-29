@@ -1,4 +1,5 @@
 import express from 'express'
+import 'dotenv/config'
 import { Request, Response } from 'express'
 
 import { StatusCodes } from 'http-status-codes'
