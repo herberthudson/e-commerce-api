@@ -20,6 +20,10 @@
   "rules": {
     "prettier/prettier": "error",
     "simple-import-sort/imports": "off",
-    "simple-import-sort/exports": "off"
+    "simple-import-sort/exports": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "args": "after-used", "argsIgnorePattern": "^next$" }
+    ]
   }
 }
