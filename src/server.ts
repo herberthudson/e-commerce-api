@@ -1,3 +1,3 @@
 import { app } from './app'
-
-app.listen(3333)
+const port = parseInt(process.env.APP_PORT as string) || 3000
+app.listen(port)
