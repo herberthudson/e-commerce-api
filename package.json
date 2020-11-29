@@ -12,7 +12,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
   "lint-staged": {
@@ -26,13 +28,17 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@types/cors": "^2.8.8",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.10",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
+    "commitizen": "^4.2.2",
     "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
@@ -54,5 +60,10 @@
     "express": "^4.17.1",
     "http-status-codes": "^2.1.4",
     "ts-node-dev": "^1.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
